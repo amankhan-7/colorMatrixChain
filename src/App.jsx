@@ -33,19 +33,18 @@ function App() {
     }
     return "green";
   };
-  
+  const boxes = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   return (
   <div>
     <h1>ColorMatrix</h1>
       <div className="grid">  
-      {Array.from({ length: 9 }, (_, i) => (
-        <div
-          key={i}
-          onClick={() => handleClick(i)}
-          className={`box ${getColor(i)}`}
-        >
-          {clicks.indexOf(i) + 1 || ""}
-        </div>
+      {boxes.map((i) => (
+      <div
+        key={i}
+        onClick={() => handleClick(i)}
+        className={`box ${getColor(i)}`}>
+        {clicks.indexOf(i) + 1 || ""}
+      </div>
       ))}
     </div>
   </div>
